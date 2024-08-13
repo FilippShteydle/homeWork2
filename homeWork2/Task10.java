@@ -4,23 +4,23 @@ public class Task10 {
 
     public static void main(String[] args) {
 
-        final int HEIGHT;
-        final int WEIGHT;
+        final double HEIGHT;
+        final double WEIGHT;
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите свой рост");
-        HEIGHT = scanner.nextInt();
+        HEIGHT = scanner.nextDouble();
         System.out.println("Введите свой вес");
-        WEIGHT = scanner.nextInt();
+        WEIGHT = scanner.nextDouble();
         if (WEIGHT < HEIGHT - 110) {
-            int plus = HEIGHT - 110 - WEIGHT;
+            double plus = Math.round((HEIGHT - 110 - WEIGHT) * 10) / 10d;
             System.out.println("Вам нужно набрать " + plus + " килограмм");
         } else {
 
             if (WEIGHT > HEIGHT - 110) {
 
-                int minus = Math.abs(HEIGHT - 110 - WEIGHT);
+                double minus = Math.round((Math.abs(HEIGHT - 110 - WEIGHT)) * 10) / 10d;
                 System.out.println("Вам нужно сбросить " + minus + " килограмм");
 
             } else {
